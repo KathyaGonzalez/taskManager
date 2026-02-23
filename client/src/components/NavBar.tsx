@@ -20,6 +20,9 @@ export function NavBar({ onLogout }: NavBarProps) {
           <Button color="inherit" component={RouterLink} to="/tasks">
             Tareas
           </Button>
+          <Button color="inherit" component={RouterLink} to="/dashboard">
+            Dashboard
+          </Button>
           <Button color="inherit" component={RouterLink} to="/create">
             Crear Tarea
           </Button>

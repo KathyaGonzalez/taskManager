@@ -29,7 +29,6 @@ const Login = ({ setToken }: LoginProps) => {
     });
 
     const onSubmit: SubmitHandler<LoginFormData> = async (data) => {
-        console.log("Login data:", data);
         try {
             const response = await fetch("http://127.0.0.1:8000/api/auth/login/", {
                 method: "POST",
@@ -46,7 +45,6 @@ const Login = ({ setToken }: LoginProps) => {
             }
 
             const responseData = await response.json();
-            console.log("JWT Login response:", responseData);
             localStorage.setItem("access_token", responseData.access);
             localStorage.setItem("refresh", responseData.refresh);
 

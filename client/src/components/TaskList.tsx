@@ -23,7 +23,8 @@ function TaskList() {
         fetch("http://127.0.0.1:8000/api/tasks/", {
             headers: {
                 "Authorization": `Bearer ${token}`,
-            }})
+            }
+        })
             .then(res => res.json())
             .then(data => setTasks(data));
     };
@@ -46,6 +47,9 @@ function TaskList() {
 
         fetch(`http://127.0.0.1:8000/api/tasks/${taskId}/`, {
             method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${token}`,
+            }
         })
             .then(res => {
                 if (!res.ok) throw new Error("Error al eliminar la tarea");
@@ -63,6 +67,7 @@ function TaskList() {
                 method: "PATCH",
                 headers: {
                     "Content-Type": "application/json",
+                    "Authorization": `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                     status: "DONE",

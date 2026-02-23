@@ -6,6 +6,7 @@ import { TaskForm } from './components/Task';
 import { NavBar } from './components/NavBar';
 import ProtectedRoute from './routes/Protected';
 import { useState } from 'react';
+import { Dashboard } from './components/Dashboard';
 
 
 function App() {
@@ -35,6 +36,11 @@ function App() {
           <Route path='/create' element={
             <ProtectedRoute>
               <TaskForm />
+            </ProtectedRoute>
+          } />
+          <Route path='/dashboard' element={
+            <ProtectedRoute>
+              <Dashboard />
             </ProtectedRoute>
           } />
         </Routes>
